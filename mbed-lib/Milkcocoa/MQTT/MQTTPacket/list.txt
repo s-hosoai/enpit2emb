@@ -1,0 +1,15 @@
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/MQTTConnectClient.o
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/MQTTConnectServer.o
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/MQTTDeserializePublish.o
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/MQTTPacket.o
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/MQTTSerializePublish.o
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/MQTTSubscribeClient.o
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/MQTTSubscribeServer.o
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/MQTTUnsubscribeClient.o
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/MQTTUnsubscribeServer.o
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/StackTrace.h
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/MQTTConnect.h
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/MQTTPacket.h
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/MQTTPublish.h
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/MQTTSubscribe.h
+C_OBJ += $(MBED_LIB_DIR)/Milkcocoa/MQTT/MQTTPacket/MQTTUnsubscribe.h
