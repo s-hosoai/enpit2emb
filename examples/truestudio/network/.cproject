@@ -99,7 +99,7 @@
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-		<project id="camtank.null.1605897965" name="camtank"/>
+		<project id="network.null.1605897965" name="network"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="scannerConfiguration">
@@ -113,10 +113,10 @@
 	</storageModule>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Debug">
-			<resource resourceType="PROJECT" workspacePath="/camtank"/>
+			<resource resourceType="PROJECT" workspacePath="/network"/>
 		</configuration>
 		<configuration configurationName="SPI-FLASH BOOT">
-			<resource resourceType="PROJECT" workspacePath="/camtank"/>
+			<resource resourceType="PROJECT" workspacePath="/network"/>
 		</configuration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
