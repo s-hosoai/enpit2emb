@@ -61,9 +61,11 @@ char *DataElement::getString(const char *key) {
     strcat(_word , key );
     strcat(_word , "\"" );
  
-    p = strstr( (char*)json_msg , _word ) + 2 + strlen(_word);
+    // p = strstr( (char*)json_msg , _word ) + 2 + strlen(_word);
+    p = strstr( (char*)json_msg , _word ) + 1 + strlen(_word);
 	
-    while( (p[i] != ',')&&(p[i] != '\n')&&(p[i] != '\"') )
+    // while( (p[i] != ',')&&(p[i] != '\n')&&(p[i] != '\"') )
+    while( (p[i] != ',')&&(p[i] != '\n')&&(p[i] != '\"')&&(p[i] != '}') )
     {
         _word[i] = p[i];
         i++;
@@ -146,7 +148,7 @@ void Milkcocoa::connect() {
 }
 
 bool Milkcocoa::push(const char *path, DataElement dataelement) {
-	char topic[100];
+ 	char topic[100];
 	char *buf;
 	MQTT::Message message;
 
