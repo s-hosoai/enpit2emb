@@ -14,6 +14,14 @@ public:
 	void driveTank(int left, int right);
 	void readIr(IrBitField_T &irbits);
 	void readAnalogIrValue(unsigned int *values);
+	void getAcceleration(short *x, short *y, short *z);
+	void getMagetism(short *x, short *y, short *z);
+	void setBuzzerHz(float hz);
+	void buzzerOn();
+	void buzzerOff();
 private:
 };
+
+
+
 #endif // ZUMO_H_

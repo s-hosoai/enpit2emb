@@ -1,4 +1,5 @@
 #include "Zumo.h"
+#include "LSM303D_I2C.h"
 
 const int MAX_SENSOR_VALUE = 1024;
 const int IR_THRESHOLD = 100;
@@ -20,7 +21,9 @@ DigitalOut dir_left(D8);
 DigitalOut dir_right(D7);
 PwmOut pwm_left(P5_0);
 PwmOut pwm_right(P8_14);
-I2C i2c(P1_3, P1_2);
+PwmOut buzzer(D3);
+
+LSM303D_I2C lsm303d(P1_3, P1_2);
 
 void Zumo::driveTank(int left, int right) {
 	int _lmotor = constrain(left, -255, 255);
@@ -89,19 +92,21 @@ static int constrain(int input, int min, int max){
 	}
 }
 
-//void getAcceleration() {
-//	char wBuf[1];
-//	char rBuf[6];
-//	wBuf[0] = 0x0F;
-//	i2c.write(0x3A, wBuf, 1, true);
-//	dly_tsk(70);
-//	i2c.read(0x3B, rBuf, 1, false);
-//	pc.printf("%d\r\n", rBuf[0]);
-////	i2c.write(0x3A, wBuf, 1, true);
-////	dly_tsk(70);
-////	i2c.read(0x3B, rBuf, 6, false);
-////	dly_tsk(70);
-////	pc.printf("x=%d, y=%d, z=%d\n\r", (rBuf[1] << 8) + rBuf[0],
-////			(rBuf[3] << 8) + rBuf[2], (rBuf[5] << 8) + rBuf[4]);
-//}
+void Zumo::getAcceleration(short *x, short *y, short *z) {
+	lsm303d.read_acc(x, y, z);
+}
 
+void Zumo::getMagetism(short *x, short *y, short *z) {
+	lsm303d.read_mag(x, y, z);
+}
+
+void Zumo::setBuzzerHz(float hz) {
+	double period = 1.0 / hz * 1000000;
+	buzzer.period_us(period);
+}
+void Zumo::buzzerOn() {
+	buzzer.write(0.5);
+}
+void Zumo::buzzerOff() {
+	buzzer.write(0.0);
+}
